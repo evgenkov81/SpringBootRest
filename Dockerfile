@@ -1,3 +1,4 @@
-FROM nginx
-COPY signin.html /usr/share/nginx/html
-COPY nginx.conf /etc/nginx
+FROM openjdk:17-oracle
+EXPOSE 8080
+ADD /target/SpringBootRest-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
